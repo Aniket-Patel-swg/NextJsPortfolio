@@ -1,0 +1,112 @@
+.about_header {
+  display: flex;
+  font-family: "Orbitron","Jura", "Exo 2", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(128, 128, 128, 0.2);
+  padding-bottom: 5rem;
+  color: gray;
+  padding-top: 2rem;
+}
+.client_text_header p {
+  font-size: 3rem;
+} 
+.client_text_header em {
+  color: rgb(188, 22, 164);
+}
+.client_text_header {
+  padding: 3rem;
+  padding-right: 0px;
+  width: 80%;
+}
+.contact_section {
+  width: 100%;
+  font-size: 2.5rem;
+  margin-top: 5rem;
+  text-align: right;
+  padding: 2rem;
+  font-weight: 900;
+}
+.social_link {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+  margin-top: 5rem;
+}
+
+.social_link span {
+  padding: 0px 1.2rem;
+}
+.social_link span:nth-child(5) {
+  padding-right: 0px;
+}
+.social_link a {
+  /* color: rgb(139, 104, 146); */
+  color: gray;
+}
+/* Button Styling */
+.contact_button {
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid gray;
+  color: #18181a;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 13px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 0.1rem;
+}
+
+.contact_button span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.contact_button span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.contact_button:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.contact_button:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.contact_button:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+.right_div_cover{
+  overflow: hidden;
+}
