@@ -52,6 +52,9 @@
     margin: 10px 0px;
     object-fit: contain;
   }
+  .item_image img:hover{
+    animation: pulse 850ms ease-in-out;
+  }
   .item_image::after{
     height: 350px;
     background-color: gray;
@@ -93,4 +96,14 @@
   }
   .tinkerer_wrapper{
     overflow-y: hidden;
+  }
+
+
+  @keyframes pulse {
+    from, to{
+      scale: 1;
+    }
+    50%{
+      scale: 1.08;
+    }
   }

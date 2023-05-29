@@ -1,0 +1,28 @@
+.contact_section{
+    display: flex;
+    padding: 4rem;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+.contact_section h1{
+    font-size: 3rem;
+}
+.contact_email_wrapper{
+    margin: 6rem 0px;
+}
+.social_link span{
+    padding: 0px 0.5rem;
+}
+.social_link span:nth-child(1){
+    padding-left: 0px;
+}
+.social_link a{
+    font-size: 2rem;
+}
+.contact_text_wrapper{
+    overflow-y: hidden;
+}
+.line_break_wrapper{
+    overflow-y: hidden;
+}

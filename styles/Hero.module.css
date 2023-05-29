@@ -147,4 +147,5 @@
   background-color: aliceblue;
   color: black;
   position: fixed;
+  z-index: 100;
 }

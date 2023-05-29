@@ -81,9 +81,9 @@ const Hero = () => {
           <span className={Styles.location}>({text})</span>
         </div>
 
-        {/* <div className={Styles.dummy}>
+        <div className={Styles.dummy}>
           <p>scroll Position : {scrollY}</p>
-        </div> */}
+        </div>
       </div>
     </>
   );

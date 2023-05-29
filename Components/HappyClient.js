@@ -81,6 +81,10 @@ const HappyClient = () => {
     config: { mass: 1, tension: 120, friction: 15 },
   });
 
+  const background = useSpring({
+    background: scrollY.to(y => (y > 800 ? '#f1f1f1' : '#8e8e8e33;')),
+  })
+
   return (
     <>
       <div className={Styles.happy_clients}>
@@ -139,7 +143,7 @@ const HappyClient = () => {
             </div>
           </div>
         </section> */}
-        <div className={Styles.carouel_2}>
+        <div style={background} className={Styles.carouel_2}>
           {/* number section  */}
           <button
             className={Styles.arrow}
