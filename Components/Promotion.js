@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 
 const Promotion = () => {
-  const { scrollY } = useScroll();  
+  const { scrollY } = useScroll();
 
   const animation = useSpring({
     opacity: scrollY.to((y) => (y > 450 ? 1 : 0)),
@@ -83,7 +83,10 @@ const Promotion = () => {
             </span>
             <span>
               {" "}
-              <Link href="https://www.linkedin.com/in/aniket-patel-developer" target="_blank">
+              <Link
+                href="https://www.linkedin.com/in/aniket-patel-developer"
+                target="_blank"
+              >
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </Link>
             </span>
@@ -98,27 +101,25 @@ const Promotion = () => {
       </div>
       <div className={Styles.Service_cards}>
         <animated.section style={animation2}>
-          <animated.div
-            style={animation3}
-            className={Styles.service_wrapper}
-          >
+          <animated.div style={animation3} className={Styles.service_wrapper}>
             WebSite Design
           </animated.div>
         </animated.section>
         <animated.section style={animation2}>
-          <animated.div
-            style={animation3}
-            className={Styles.service_wrapper}
-          >
+          <animated.div style={animation3} className={Styles.service_wrapper}>
             Website Development
           </animated.div>
         </animated.section>{" "}
         {/* <animated.section>
             Branding
-          </section> */}.
-
-          under construction, comming soon...
+          </section> */}
+        .
       </div>
+
+      <section className={Styles.coming_soon}>
+        under construction, comming soon... here is my{" "}
+        <Link href="./Resume.pdf" target="_BLANK">Resume</Link>
+      </section>
     </>
   );
 };

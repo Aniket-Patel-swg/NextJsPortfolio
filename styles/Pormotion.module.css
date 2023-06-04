@@ -253,3 +253,8 @@
     padding: 0px 6px;
   }
 }
+
+.coming_soon{
+  background-color: rgba(128, 128, 128, 0.2);
+  padding: 2rem;
+}
