@@ -13,7 +13,7 @@ const Navbar = () => {
           </div>
           <div className={Styles.navLinks}>
             <Link href="#contact">Contact</Link>
-            <Link href="#resume">Resume</Link>
+            <Link href="./Resume.pdf" target="_BLANK">Resume</Link>
           </div>
         </div>
       </nav>

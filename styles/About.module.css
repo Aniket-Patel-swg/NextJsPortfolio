@@ -50,7 +50,8 @@
     height: 400px;
     background-color: gray;
     margin: 10px 0px;
-    object-fit: contain;
+    object-fit: cover;
+    width: 100%;
   }
   .item_image img:hover{
     animation: pulse 850ms ease-in-out;

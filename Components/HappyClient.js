@@ -39,6 +39,8 @@ const HappyClient = () => {
     },
   ];
 
+  // to keep track of current screen size
+
   // useEffect for continous motion
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,11 +55,7 @@ const HappyClient = () => {
     return () => {
       clearInterval(interval); // Cleanup the interval on component unmount
     };
-  }); // Empty dependency array to run the effect only once on component mount
-
-  const handleCarouselNavigation = (index) => {
-    setCurrentItem(index);
-  };
+  });
 
   function handleDotClick(index) {
     setActiveIndex(index);
@@ -82,8 +80,8 @@ const HappyClient = () => {
   });
 
   const background = useSpring({
-    background: scrollY.to(y => (y > 800 ? '#f1f1f1' : '#8e8e8e33;')),
-  })
+    background: scrollY.to((y) => (y > 800 ? "#f1f1f1" : "#8e8e8e33;")),
+  });
 
   return (
     <>
@@ -101,50 +99,7 @@ const HappyClient = () => {
           </section>
         </div>
 
-        {/* <section class={Styles.container}>
-          <div class={Styles.slider_wrapper}>
-            <div class={Styles.slider}>
-              {carousel.map((item, index) => {
-                return (
-                  <>
-                    <span
-                      className={`${Styles.slider_items} ${
-                        index === currentItem ? Styles.currentItem : ""
-                      }`}
-                      id={`slide-${item.no}`}
-                      key={index}
-                    >
-                      <span className={Styles.carouse_details}>
-                        <h3 className={Styles.carousel_number}>0{item.no}</h3>
-                        <h1 className={Styles.carousel_name}>{item.title}</h1>
-                        <h2 className={Styles.carousel_website}>
-                          <a href={item.website} target="_BLANK">
-                            website
-                          </a>
-                        </h2>
-                      </span>
-                      <img
-                        src={item.image}
-                        alt="3D rendering of an imaginary orange planet in space"
-                      />
-                    </span>
-                  </>
-                );
-              })}
-            </div>
-            <div class={Styles.slider_nav}>
-              {carousel.map((item, index) => (
-                <a
-                  href={`#slide-${item.no}`}
-                  onClick={() => handleCarouselNavigation(index)}
-                  key={index}
-                ></a>
-              ))}
-            </div>
-          </div>
-        </section> */}
         <div style={background} className={Styles.carouel_2}>
-          {/* number section  */}
           <button
             className={Styles.arrow}
             onClick={handleLeftButtonClick}
@@ -169,7 +124,7 @@ const HappyClient = () => {
           <div className={Styles.number_container}>
             <div
               className={Styles.number_wrapper}
-              style={{ transform: `TranslateX(-${activeIndex * 25}%)` }}
+              style={{ transform: `TranslateX(-${activeIndex * 220}px)` }}
             >
               {items.map((item) => {
                 return (
@@ -218,7 +173,6 @@ const HappyClient = () => {
                 })}
               </div>
             </div>
-            {/* routing buttons  */}
             <div className={Styles.dots}>
               {items.map((item, index) => (
                 <span
@@ -254,7 +208,7 @@ const HappyClient = () => {
               })}
             </ul>
           </div>
-          <div className={Styles.links}>
+          {/* <div className={Styles.links}>
             <Link href="/">
               <button class={Styles.skill_button} role="button">
                 My Skills
@@ -265,7 +219,7 @@ const HappyClient = () => {
                 work experience
               </button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

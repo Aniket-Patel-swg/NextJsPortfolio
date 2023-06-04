@@ -7,4 +7,5 @@
 
 body{
     font-family: 'Orbitron','Jura','Exo 2', sans-serif, Verdana, Geneva, Tahoma, sans-serif ;
+    overflow-x: hidden;
 }

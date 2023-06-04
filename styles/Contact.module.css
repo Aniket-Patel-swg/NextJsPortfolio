@@ -4,6 +4,8 @@
     height: 100vh;
     justify-content: space-around;
     align-items: center;
+    background-color: #1A1A1A
+    ;
 }
 .contact_section h1{
     font-size: 3rem;
@@ -19,10 +21,75 @@
 }
 .social_link a{
     font-size: 2rem;
+    color: darkgoldenrod;
 }
 .contact_text_wrapper{
     overflow-y: hidden;
+    color: darkgray;
 }
 .line_break_wrapper{
     overflow-y: hidden;
+    color: darkgray;
+}
+.contact_email_wrapper{
+    font-size: 1.4rem;
+    color: darkgoldenrod;
+    overflow-y: hidden;
+}
+.contact_email_wrapper p{
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+.contact_email_wrapper a{
+    color: darkgoldenrod;
+}
+.social_link{
+    overflow-y: hidden;
+}
+.conact_two_section{
+    display: flex;
+}
+.right_contact_section h4{
+    color: gray;
+    font-size: 1.1rem;
+}
+.right_contact_section input{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: transparent;
+    color: gray;
+    z-index: 1;
+    margin: 1rem;
+    border-bottom: gray;
+  border-bottom: 1px solid gray;
+}
+.right_contact_section textarea{
+    background-color: transparent;
+    border: none;
+  border-bottom: 1px solid gray;
+    padding: 15px;
+}
+.right_contact_section select{
+    background-color: transparent;
+    border: none;   
+    color: gray;
+    padding: 14.75px;
+    margin: 1rem;
+  border-bottom: 1px solid gray;
+}
+.right_contact_section textarea{
+    margin: 1rem;
+    border: none;
+    color: gray;
+  border-bottom: 1px solid gray;
+}
+.submit_button{
+    background-color: gray;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    border-radius: 0.3rem;
 }

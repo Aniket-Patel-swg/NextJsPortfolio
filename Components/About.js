@@ -11,7 +11,7 @@ const About = () => {
 
     "/about-img.jpg",
 
-    "/Images/Studio_RA_pic.png",
+    "/Images/about_3_pic.jpeg",
   ];
 
   const springAnimation = useSpring({
@@ -102,7 +102,7 @@ const About = () => {
             <div className={Styles.item_image}>
               <animated.img
                 style={springAnimation}
-                src={Images[1]}
+                src={Images[2]}
                 alt="About Image"
                 layout="fill"
               />
@@ -125,7 +125,7 @@ const About = () => {
             <div className={Styles.item_image}>
               <animated.img
                 style={springAnimation2}
-                src={Images[0]}
+                src={Images[1]}
                 alt="About Image"
                 layout="fill"
               />

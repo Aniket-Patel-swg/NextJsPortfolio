@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 
 const Promotion = () => {
-  const { scrollY } = useScroll();
+  const { scrollY } = useScroll();  
 
   const animation = useSpring({
     opacity: scrollY.to((y) => (y > 450 ? 1 : 0)),
@@ -28,6 +28,15 @@ const Promotion = () => {
     ),
     config: { mass: 1, tension: 120, friction: 14 },
   });
+
+  const animation3 = useSpring({
+    opacity: scrollY.to((y) => (y > 650 ? 1 : 0)),
+    transform: scrollY.to((y) =>
+      y > 650 ? "translateX(0px)" : "translateX(-50px)"
+    ),
+    config: { mass: 1, tension: 120, friction: 14 },
+  });
+
   return (
     <>
       <div className={Styles.about_header}>
@@ -74,7 +83,7 @@ const Promotion = () => {
             </span>
             <span>
               {" "}
-              <Link href="">
+              <Link href="https://www.linkedin.com/in/aniket-patel-developer" target="_blank">
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </Link>
             </span>
@@ -86,6 +95,29 @@ const Promotion = () => {
             </span>
           </animated.div>
         </div>
+      </div>
+      <div className={Styles.Service_cards}>
+        <animated.section style={animation2}>
+          <animated.div
+            style={animation3}
+            className={Styles.service_wrapper}
+          >
+            WebSite Design
+          </animated.div>
+        </animated.section>
+        <animated.section style={animation2}>
+          <animated.div
+            style={animation3}
+            className={Styles.service_wrapper}
+          >
+            Website Development
+          </animated.div>
+        </animated.section>{" "}
+        {/* <animated.section>
+            Branding
+          </section> */}.
+
+          under construction, comming soon...
       </div>
     </>
   );

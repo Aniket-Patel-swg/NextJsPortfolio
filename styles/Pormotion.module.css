@@ -2,7 +2,7 @@
   display: flex;
   font-family: "Orbitron","Jura", "Exo 2", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgba(128, 128, 128, 0.2);
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
   color: gray;
   padding-top: 2rem;
 }
@@ -109,4 +109,147 @@
 }
 .right_div_cover{
   overflow: hidden;
+}
+.Service_cards{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(128, 128, 128, 0.2);
+  padding: 3rem;
+}
+.Service_cards section{
+  padding: 2rem;
+  font-size: 1.5rem;
+  /* background-color: red; */
+  font-weight: 800;
+   transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+   color: gray;
+   border: 2px solid rgb(192, 192, 192);
+   margin-bottom: 3rem;
+   border-radius: 0.5rem;
+   cursor: pointer;
+   box-shadow: 2px black;
+   margin-top: 4rem;
+   text-align: center;
+}
+.Service_cards section:hover{
+  box-shadow: inset 700px 0 0 0 rgba(34, 34, 34, 0.344);
+  color: rgba(239, 239, 239, 0.807);
+}
+.service_wrapper{
+  /* background-color: red; */
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+}
+
+
+@media (max-width : 1275px) {
+  .client_text_header p{
+    font-size: 2.6rem;
+  }
+  .contact_section{
+    font-size: 2rem;
+  }
+  .social_link{
+    font-size: 1.2rem;
+  }
+  .Service_cards section{
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width : 980px) {
+  .client_text_header p{
+    font-size: 2.3rem;
+  }
+  .contact_section{
+    font-size: 1.7rem;
+  }
+  .social_link{
+    font-size: 1rem;
+  }
+  .Service_cards section{
+    padding: 1.5rem;
+    font-size: 1rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width : 744px) {
+  .about_header{
+    display: grid;
+  }
+  .contact_section{
+    margin-top: 0px;
+    padding: 0px;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+  }
+  .social_link{
+    margin-top: 3rem;
+  }
+  .client_text_header{
+    padding: 0px;
+    width: 100%;
+    padding: 4rem 2rem;
+    padding-bottom: 10px;
+  }
+  .client_text_header p{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width : 620px) {
+  .client_text_header{
+    padding: 2rem 2rem;
+  }
+  .contact_section{
+    padding-top: 3rem;
+  }
+  .Service_cards{
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  .Service_cards section{
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .social_link span{
+    padding: 0px 0.8rem;
+  }
+  .contact_button{
+    font-size: 0.7rem;
+    padding: 14px 14px 13px;
+  }
+}
+
+@media (max-width : 420px) {
+  .contact_section{
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
+  .contact_section a{
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width : 340px) {
+  .contact_section{
+    padding-right: 16px;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+  }
+  .client_text_header {
+    padding-left: 16px;
+  }
+  .client_text_header p{
+    font-size: 2rem;
+  }
+  .social_link span{
+    padding: 0px 6px;
+  }
 }
