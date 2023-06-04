@@ -57,9 +57,15 @@ const Promotion = () => {
             role="button"
           >
             <span class={Styles.text}>
-              <h2 className={Styles.contact_text}>Contact Me</h2>
+              <h2 className={Styles.contact_text}>
+                <Link href="mailto:contact@aniketpatel.me" target="_blank">
+                  Contact Me
+                </Link>
+                </h2>
             </span>
-            <span>Make it Happen</span>
+            <span> <Link href="mailto:contact@aniketpatel.me" target="_blank">
+                  Make It Happen
+                </Link></span>
           </animated.button>
 
           <animated.div style={animation} className={Styles.social_link}>

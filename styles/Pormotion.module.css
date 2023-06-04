@@ -61,6 +61,10 @@
   touch-action: manipulation;
   border-radius: 0.1rem;
 }
+.contact_button a{
+  text-decoration: none;
+  color: #18181a;
+}
 
 .contact_button span:first-child {
   position: relative;
