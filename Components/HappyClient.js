@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useSpring, useScroll, animated } from "react-spring";
+import { Swipeable, useSwipeable } from "react-swipeable";
 
 const HappyClient = () => {
   const { scrollY } = useScroll();
@@ -61,7 +62,7 @@ const HappyClient = () => {
         setMobile(true);
       }
 
-      if(window.innerWidth < 380){
+      if (window.innerWidth < 380) {
         setSmallMobile(true);
       }
       // Clean up the event listener when the component is unmounted
@@ -87,14 +88,19 @@ const HappyClient = () => {
     };
   });
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setActiveIndex(activeIndex - 1),
+    onSwipedRight: () => setActiveIndex(activeIndex + 1),
+  })
+
   function handleDotClick(index) {
     setActiveIndex(index);
   }
 
-    function handleLeftButtonClick() {
-      const newIndex = (activeIndex - 1 + items.length) % items.length;
-      setActiveIndex(newIndex);
-    }
+  function handleLeftButtonClick() {
+    const newIndex = (activeIndex - 1 + items.length) % items.length;
+    setActiveIndex(newIndex);
+  }
 
   function handleRightButtonClick() {
     const newIndex = (activeIndex + 1) % items.length;
@@ -129,7 +135,9 @@ const HappyClient = () => {
           </section>
         </div>
 
-        <div style={background} className={Styles.carouel_2}>
+        <div style={background} className={Styles.carouel_2}
+        {...handlers}
+        >
           <button
             className={Styles.arrow}
             onClick={handleLeftButtonClick}
@@ -154,7 +162,11 @@ const HappyClient = () => {
           <div className={Styles.number_container}>
             <div
               className={Styles.number_wrapper}
-              style={{ transform: `TranslateX(-${activeIndex * (mobile ? 170 : 220)}px)` }}
+              style={{
+                transform: `TranslateX(-${
+                  activeIndex * (mobile ? 170 : 220)
+                }px)`,
+              }}
             >
               {items.map((item) => {
                 return (
@@ -164,7 +176,7 @@ const HappyClient = () => {
                     </span>
                   </>
                 );
-              })} 
+              })}
             </div>
           </div>
           {/* combined vertical section */}
@@ -173,7 +185,11 @@ const HappyClient = () => {
             <div className={Styles.title_section}>
               <div
                 className={Styles.title_wrapper}
-                style={{ transform: `TranslateY(-${activeIndex * (mobile ? 76 : 96)}px)` }}
+                style={{
+                  transform: `TranslateY(-${
+                    activeIndex * (mobile ? 76 : 96)
+                  }px)`,
+                }}
               >
                 {items.map((item) => {
                   return (
@@ -226,16 +242,33 @@ const HappyClient = () => {
               className={Styles.images_list}
               style={{
                 transform: `translateX(-${
-                  activeIndex * (tablet ? (mobile ?( smallMobile ? 300 : 300 ): 450) : (mobile ? (smallMobile ? 300 : 300 ): 650))
+                  activeIndex *
+                  (tablet
+                    ? mobile
+                      ? smallMobile
+                        ? 300
+                        : 300
+                      : 450
+                    : mobile
+                    ? smallMobile
+                      ? 300
+                      : 300
+                    : 650)
                 }px)`,
               }}
             >
-              {items.map((item,index) => {
+              {items.map((item, index) => {
                 return (
                   <>
-                    <li key={item.Number} className={index === activeIndex ? Styles.Images : Styles.grayscale_image}>
+                    <li
+                      key={item.Number}
+                      className={
+                        index === activeIndex
+                          ? Styles.Images
+                          : Styles.grayscale_image
+                      }
+                    >
                       <img src={item.images} alt="" />
-                      
                     </li>
                   </>
                 );
