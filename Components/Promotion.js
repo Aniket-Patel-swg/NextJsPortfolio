@@ -77,7 +77,7 @@ const Promotion = () => {
             </span>
             <span>
               {" "}
-              <Link href="">
+              <Link href="https://www.instagram.com/aniketpatel0412" target="_blank">
                 <FontAwesomeIcon icon={faInstagram} size="2x" />
               </Link>
             </span>

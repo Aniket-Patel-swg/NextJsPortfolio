@@ -11,7 +11,7 @@ export default function Home() {
     {/* <Navbar /> */}
       <Hero />
       <Promotion />
-      {/* <HappyClient /> */}
+      <HappyClient />
       {/* <About />
       <Contact /> */}
       {/* https://relatablecode.com/how-to-easily-trigger-react-spring-animation-when-in-view */}

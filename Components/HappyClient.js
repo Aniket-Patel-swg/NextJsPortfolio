@@ -8,8 +8,11 @@ import { useSpring, useScroll, animated } from "react-spring";
 const HappyClient = () => {
   const { scrollY } = useScroll();
 
-  const [currentItem, setCurrentItem] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [tablet, setTablet] = useState(false);
+  const [mobile, setMobile] = useState(false);
+  const [smallMobile, setSmallMobile] = useState(false);
   const [paused, setPaused] = useState(false);
   const items = [
     {
@@ -40,6 +43,33 @@ const HappyClient = () => {
   ];
 
   // to keep track of current screen size
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Check if window is defined (client-side)
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+
+      if (window.innerWidth < 730) {
+        setTablet(true);
+      }
+
+      if (windowWidth.innerWidth < 534) {
+        setMobile(true);
+      }
+
+      if(windowWidth.innerWidth < 350){
+        setSmallMobile(true);
+      }
+      // Clean up the event listener when the component is unmounted
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
 
   // useEffect for continous motion
   useEffect(() => {
@@ -47,7 +77,7 @@ const HappyClient = () => {
       if (!paused) {
         setActiveIndex(activeIndex + 1);
       }
-    }, 2000);
+    }, 2500);
 
     if (activeIndex > items.length - 1) {
       setActiveIndex(0);
@@ -61,10 +91,10 @@ const HappyClient = () => {
     setActiveIndex(index);
   }
 
-  function handleLeftButtonClick() {
-    const newIndex = (activeIndex - 1 + items.length) % items.length;
-    setActiveIndex(newIndex);
-  }
+    function handleLeftButtonClick() {
+      const newIndex = (activeIndex - 1 + items.length) % items.length;
+      setActiveIndex(newIndex);
+    }
 
   function handleRightButtonClick() {
     const newIndex = (activeIndex + 1) % items.length;
@@ -97,6 +127,7 @@ const HappyClient = () => {
               fabrics of web like HTML, CSS and JS.
             </animated.p>
           </section>
+          <p>Window width {windowWidth}</p>
         </div>
 
         <div style={background} className={Styles.carouel_2}>
@@ -134,7 +165,7 @@ const HappyClient = () => {
                     </span>
                   </>
                 );
-              })}
+              })} 
             </div>
           </div>
           {/* combined vertical section */}
@@ -194,13 +225,16 @@ const HappyClient = () => {
           >
             <ul
               className={Styles.images_list}
-              style={{ transform: `translateX(-${activeIndex * 705}px)` }}
-              // style={{transform : 'TranslateX(-1680px)'}}
+              style={{
+                transform: `translateX(-${
+                  activeIndex * (tablet ? (mobile ? 340 : 450) : 705)
+                }px)`,
+              }}
             >
-              {items.map((item) => {
+              {items.map((item,index) => {
                 return (
                   <>
-                    <li className={Styles.Images}>
+                    <li key={item.Number} className={index === activeIndex ? Styles.Images : Styles.grayscale_image}>
                       <img src={item.images} alt="" />
                     </li>
                   </>
