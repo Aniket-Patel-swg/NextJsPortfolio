@@ -57,11 +57,11 @@ const HappyClient = () => {
         setTablet(true);
       }
 
-      if (windowWidth.innerWidth < 534) {
+      if (window.innerWidth < 534) {
         setMobile(true);
       }
 
-      if(windowWidth.innerWidth < 350){
+      if(window.innerWidth < 380){
         setSmallMobile(true);
       }
       // Clean up the event listener when the component is unmounted
@@ -69,7 +69,7 @@ const HappyClient = () => {
         window.removeEventListener("resize", handleResize);
       };
     }
-  }, []);
+  }, [windowWidth]);
 
   // useEffect for continous motion
   useEffect(() => {
@@ -127,7 +127,6 @@ const HappyClient = () => {
               fabrics of web like HTML, CSS and JS.
             </animated.p>
           </section>
-          <p>Window width {windowWidth}</p>
         </div>
 
         <div style={background} className={Styles.carouel_2}>
@@ -155,7 +154,7 @@ const HappyClient = () => {
           <div className={Styles.number_container}>
             <div
               className={Styles.number_wrapper}
-              style={{ transform: `TranslateX(-${activeIndex * 220}px)` }}
+              style={{ transform: `TranslateX(-${activeIndex * (mobile ? 170 : 220)}px)` }}
             >
               {items.map((item) => {
                 return (
@@ -174,7 +173,7 @@ const HappyClient = () => {
             <div className={Styles.title_section}>
               <div
                 className={Styles.title_wrapper}
-                style={{ transform: `TranslateY(-${activeIndex * 96}px)` }}
+                style={{ transform: `TranslateY(-${activeIndex * (mobile ? 76 : 96)}px)` }}
               >
                 {items.map((item) => {
                   return (
@@ -227,7 +226,7 @@ const HappyClient = () => {
               className={Styles.images_list}
               style={{
                 transform: `translateX(-${
-                  activeIndex * (tablet ? (mobile ? 340 : 450) : 705)
+                  activeIndex * (tablet ? (mobile ?( smallMobile ? 300 : 300 ): 450) : (mobile ? (smallMobile ? 300 : 300 ): 650))
                 }px)`,
               }}
             >
@@ -236,6 +235,7 @@ const HappyClient = () => {
                   <>
                     <li key={item.Number} className={index === activeIndex ? Styles.Images : Styles.grayscale_image}>
                       <img src={item.images} alt="" />
+                      
                     </li>
                   </>
                 );
