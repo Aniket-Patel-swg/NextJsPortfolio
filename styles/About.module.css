@@ -160,6 +160,10 @@
     }
   }
 
+  @media (max-width: 730px) {
+    
+  }
+
   @media (max-width: 767px) {
     .About_me {
       padding: 2rem;

@@ -374,8 +374,26 @@
   .link_section{
     margin-bottom: 1rem;
   }
+  .links{
+    margin-top: 14rem;
+    justify-content: space-between;
+    /* align-items: center;
+    margin-left: 3rem; */
+  }
+  .links button{
+    margin: 0px 1rem;
+  }
 }
 
+@media (max-width: 630px) {
+  .links{
+    margin-left: 8rem;
+    margin-right: auto;
+  }
+  .links button{
+    padding: 0.75rem;
+  }
+}
 @media (max-width: 636px) {
   .combined_section{
     left: 5%;
@@ -420,12 +438,27 @@
   .Clients_header_text p{
     text-align: left;
   }
+  .links{
+    margin-left: 4.5rem;
+    margin-right: auto;
+  }
+  .links button{
+    padding: 0.75rem;
+  }
 }
 @media (max-width: 440px) {
   .combined_section{
     left: 3%;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+  .links{
+    margin-left: 3.5rem;
+    margin-right: auto;
+    margin-top: 17rem;
+  }
+  .links button{
+    padding: 0.75rem;
   }
 }
 
@@ -435,5 +468,18 @@
   }
   .combined_section{
     margin-top: 3rem;
+  } 
+  .links{
+    margin-left: 3rem;
+    margin-right: auto;
+  }
+  .links button{
+    padding: 0.65rem;
+  }
+}
+
+@media (max-width: 341px) {
+  .links button{
+    margin: 5px 1rem;
   }
 }
