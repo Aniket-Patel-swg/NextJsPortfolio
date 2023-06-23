@@ -1,16 +1,21 @@
 .about_header {
   display: flex;
   font-family: "Orbitron","Jura", "Exo 2", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgba(128, 128, 128, 0.2);
+  /* background-color: rgba(128, 128, 128, 0.2); */
+  background-color: #131313
+  ;
   padding-bottom: 2rem;
-  color: gray;
+  /* color: gray; */  
+  color: #636363
+  ;
   padding-top: 2rem;
 }
 .client_text_header p {
   font-size: 3rem;
 } 
 .client_text_header em {
-  color: rgb(188, 22, 164);
+  /* color: rgb(188, 22, 164); */
+  color: #415D8F;
 }
 .client_text_header {
   padding: 3rem;
@@ -23,12 +28,13 @@
   margin-top: 5rem;
   text-align: right;
   padding: 2rem;
-  font-weight: 900;
+  font-weight: 600;
+  color: #636363;
 }
 .social_link {
   display: flex;
   justify-content: flex-end;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 5rem;
 }
 
@@ -40,7 +46,10 @@
 }
 .social_link a {
   /* color: rgb(139, 104, 146); */
-  color: gray;
+  color: #636363;
+}
+.social_link a:hover{
+  color: #415D8F;
 }
 /* Button Styling */
 .contact_button {
@@ -63,7 +72,7 @@
 }
 .contact_button a{
   text-decoration: none;
-  color: rgb(254, 168, 241);
+  color: #415D8F;
 }
 
 .contact_button span:first-child {
@@ -94,7 +103,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: gray;
+  background-color: #858B88;
   font-weight: 700;
   font-size: 1.2rem;
   transform-origin: bottom center;
@@ -118,8 +127,7 @@
 }
 .Service_cards{
   display: flex;
-  justify-content: space-around;
-  background-color: rgba(128, 128, 128, 0.2);
+  justify-content: space-around;  
   padding: 3rem;
 }
 .Service_cards section{
@@ -128,8 +136,8 @@
   /* background-color: red; */
   font-weight: 800;
    transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-   color: gray;
-   border: 2px solid rgb(122, 122, 122);
+   color: #5F5F5F;
+   border: 2px solid #31538E;
    margin-bottom: 3rem;
    border-radius: 0.5rem;
    cursor: pointer;
@@ -261,6 +269,13 @@
 }
 
 .coming_soon{
-  background-color: rgba(128, 128, 128, 0.2);
+  background-color: #131313;
   padding: 2rem;
+  color: #746452
+  ;
+}
+.coming_soon a{
+  color: #C4BEB2;
+  text-decoration: none;
+  margin-left: 3px;
 }

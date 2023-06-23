@@ -127,7 +127,7 @@ const Contact = () => {
                   <option value="branding">Branding</option>
                   <option value="design">Website Design</option>
                   <option value="all">Make My brand from scratch</option>
-                  <option value="other">Other</option>
+                  <option value="other">Other</option>x
                 </select>
               </div>
             </div>

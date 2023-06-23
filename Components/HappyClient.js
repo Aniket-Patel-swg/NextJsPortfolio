@@ -39,7 +39,7 @@ const HappyClient = () => {
       Number: "04",
       images: "/Images/Studio_RA.png",
       title: "Studio RA",
-      Website: "https://patelaniket1207.wixsite.com/the-serene-re",
+      Website: "https://patelaniket1207.wixsite.com/the-serene-resort",
     },
   ];
 
@@ -89,8 +89,8 @@ const HappyClient = () => {
   });
 
   const handlers = useSwipeable({
-    onSwipedLeft: () => setActiveIndex(activeIndex - 1),
-    onSwipedRight: () => setActiveIndex(activeIndex + 1),
+    onSwipedLeft: () => setActiveIndex(activeIndex + 1),
+    onSwipedRight: () => setActiveIndex(activeIndex - 1),
   })
 
   function handleDotClick(index) {
@@ -239,6 +239,7 @@ const HappyClient = () => {
             onMouseLeave={() => setPaused(false)}
           >
             <ul
+            {...handlers}
               className={Styles.images_list}
               style={{
                 transform: `translateX(-${
@@ -275,7 +276,7 @@ const HappyClient = () => {
               })}
             </ul>
           </div>
-          {/* <div className={Styles.links}>
+          <div className={Styles.links}>
             <Link href="/">
               <button class={Styles.skill_button} role="button">
                 My Skills
@@ -286,7 +287,7 @@ const HappyClient = () => {
                 work experience
               </button>
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
