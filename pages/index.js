@@ -13,7 +13,7 @@ export default function Home() {
       <Promotion />
       <HappyClient />
       <About />
-      {/* <Contact /> */}
+      <Contact />
       {/* https://relatablecode.com/how-to-easily-trigger-react-spring-animation-when-in-view */}
       {/* https://ryo-irago.com/ */}
     </>

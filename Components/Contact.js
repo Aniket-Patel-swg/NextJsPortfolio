@@ -10,39 +10,70 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import PhoneInput, {
+  formatPhoneNumber,
+  formatPhoneNumberIntl,
+  isValidPhoneNumber,
+} from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { isPossiblePhoneNumber } from "react-phone-number-input";
 
 const Contact = () => {
   const [selectedOption, setSelectedOption] = useState("");
+
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [isTypingPhoneNumber, setIsTypingPhoneNumber] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
+  const handleNumberInput = () => {};
+
   const { scrollY } = useScroll();
 
   const animation = useSpring({
-    opacity: scrollY.to((y) => (y > 2845 ? 1 : 0)),
+    opacity: scrollY.to((y) => (y > 3305 ? 1 : 0)),
     transform: scrollY.to((y) =>
-      y > 2845 ? "translateY(0px)" : "translateY(100px)"
+      y > 3305 ? "translateY(0px)" : "translateY(100px)"
     ),
     config: { mass: 1, tension: 60, friction: 13 },
   });
 
   const animation2 = useSpring({
-    opacity: scrollY.to((y) => (y > 2990 ? 1 : 0)),
+    opacity: scrollY.to((y) => (y > 3495 ? 1 : 0)),
     transform: scrollY.to((y) =>
-      y > 2990 ? "translateY(0px)" : "translateY(100px)"
+      y > 3495 ? "translateY(0px)" : "translateY(100px)"
     ),
     config: { mass: 1, tension: 60, friction: 13 },
   });
 
   const linkAnimation = useSpring({
-    opacity: scrollY.to((y) => (y > 3080 ? 1 : 0)),
+    opacity: scrollY.to((y) => (y > 3575 ? 1 : 0)),
     transform: scrollY.to((y) =>
-      y > 3080 ? "translateY(10px)" : "translateY(100px)"
+      y > 3575 ? "translateY(10px)" : "translateY(100px)"
     ),
     config: { mass: 1, tension: 60, friction: 13 },
   });
+
+  function handleSubmit() {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    setSuccessMessage('Message Sent successfully!')
+    if (!name || !email) {
+      alert("Name and email are required fields. ");
+      setSuccessMessage('')
+      return;
+    }
+
+    // Proceed with form submission
+    // You can perform any additional logic or API calls here
+  }
 
   return (
     <>
@@ -97,9 +128,16 @@ const Contact = () => {
           </div>
         </div>
         <div></div>
+
         <div className={Styles.right_contact_section}>
           <section className={Styles.contact_name_section}>
-            <input type="text" name="name" id="name" placeholder="Your Name" required /> 
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your Name"
+              required
+            />
           </section>
           <section className={Styles.contact_email_section}>
             <input
@@ -112,12 +150,19 @@ const Contact = () => {
           </section>
           <section className={Styles.conact_two_section}>
             <div className={Styles.contact_number_section}>
-              <input
+              {/* <input
                 type="text"
                 id="phone"
                 name="phone"
                 placeholder="Your Number"
+              /> */}
+              <PhoneInput
+                value={phoneNumber}
+                onChange={(phoneNumber) => setPhoneNumber(phoneNumber)}
+                className={Styles.phone_input}
+                placeholder="Country Code First"
               />
+              {/* {phoneNumber && isValidPhoneNumber(phoneNumber) ? "" : "Phone Number is not valid"} */}
             </div>
             <div className={Styles.contact_subject_section}>
               <div>
@@ -127,6 +172,7 @@ const Contact = () => {
                   <option value="branding">Branding</option>
                   <option value="design">Website Design</option>
                   <option value="all">Make My brand from scratch</option>
+                  <option value="all">Update my website</option>
                   <option value="other">Other</option>x
                 </select>
               </div>
@@ -141,7 +187,10 @@ const Contact = () => {
               placeholder="Drop me an message"
             ></textarea>
           </section>
-          <div className={Styles.submit_button}>
+          {successMessage && (
+          <div className={Styles.success_message}>{successMessage}</div>
+        )}
+          <div className={Styles.submit_button} onClick={handleSubmit}>
             Submit
           </div>
         </div>

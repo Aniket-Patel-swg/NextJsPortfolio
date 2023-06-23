@@ -267,6 +267,7 @@
   }
 .links button{
   margin: 0px 1rem;
+  text-decoration: none;
 }
 .skill_button {
   align-items: center;
