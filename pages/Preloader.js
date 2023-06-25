@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/Preloader.module.css";
+
 const Preloader = () => {
   const [count, setCount] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
   const name = ["A", "N", "I", "K", "E", "T"];
   const colors = [
     "#D18080",
@@ -13,25 +14,29 @@ const Preloader = () => {
     "#30312F",
   ];
 
-  // useEffect
+  // useEffect till currentIndex reaches 5
   useEffect(() => {
-    const timeout = setTimeout(() => setCount(count + 1), 70);
-
-    const updateIndex = setTimeout(
-      () => setCurrentIndex(currentIndex + 1),
-      700
-    );
-
-    console.log(currentIndex);
-
-    if (currentIndex === 5) {
-      setCurrentIndex(5);
-      return;
+    if (currentIndex === 6) {
+      return; // Exit the useEffect if currentIndex reaches 5
     }
-
-    if (count === 100) {
+  
+    const timeout = setTimeout(() => {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }, 700);
+    console.log("current index : "+currentIndex);
+  
+    return () => {
       clearTimeout(timeout);
+    };
+  }, [currentIndex]);
+
+  // useEffect for count till 100
+  useEffect(() => {
+    if (count === 100) {
+      return; // Exit the useEffect if count reaches 100
     }
+    const timeout = setTimeout(() => setCount((prevCount) => prevCount + 1), 70);
+    console.log(count)
 
     return () => {
       clearTimeout(timeout);
