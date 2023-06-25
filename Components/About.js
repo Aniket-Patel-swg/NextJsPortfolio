@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Styles from "../styles/About.module.css";
 import { useSpring, useScroll, animated, to } from "react-spring";
 
 const About = () => {
+
   const { scrollY } = useScroll();
 
   const Images = [
@@ -22,19 +23,13 @@ const About = () => {
     config: { mass: 1, tension: 120, friction: 10 },
   });
 
-// const springAnimation = useSpring({
-//   config: { duration: 500 },
-// 	from: { opacity: 0, left: '-500px' },
-// 	to: {
-// 		opacity: dataRef?.isIntersecting ? 1 : 0,
-// 		left: dataRef?.isIntersecting ? '0px' : '-500px',
-// 	},
-// })
+
+
 
   const springAnimation2 = useSpring({
-    opacity: scrollY.to((y) => (y > 2600 ? 1 : 0)),
+    opacity: scrollY.to((y) => (y > 2900 ? 1 : 0)),
     transform: scrollY.to((y) =>
-      y > 2600 ? "translateX(0px)" : "translateX(-100px)"
+      y > 2900 ? "translateX(0px)" : "translateX(-100px)"
     ),
     config: { mass: 1, tension: 120, friction: 10 },
     delay: 1000,

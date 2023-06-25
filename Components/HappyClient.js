@@ -108,9 +108,9 @@ const HappyClient = () => {
   }
 
   const animation = useSpring({
-    opacity: scrollY.to((y) => (y > 800 ? 1 : 0)),
+    opacity: scrollY.to((y) => (y > 1000 ? 1 : 0)),
     transform: scrollY.to((y) =>
-      y > 800 ? "translateY(0px)" : "translateY(100px)"
+      y > 1000 ? "translateY(0px)" : "translateY(100px)"
     ),
     config: { mass: 1, tension: 120, friction: 15 },
   });

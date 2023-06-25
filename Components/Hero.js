@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/Hero.module.css";
+import { animated, useSpring } from "react-spring";
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -14,7 +15,6 @@ const Hero = () => {
     "sportsman",
     "Developer",
   ];
-  
 
   // useEffect for autotyping
   useEffect(() => {
@@ -49,7 +49,6 @@ const Hero = () => {
     return () => clearTimeout(typingTimer);
   }, [text, isDeleting, loopNum, typingSpeed, words]);
 
-
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -57,27 +56,96 @@ const Hero = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    console.log("");
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   // console.log('Scroll position:', scrollY);
 
+  // spring animation for name
+  const nameAnimation = useSpring({
+    config: {
+      duration: 900,
+      tension: 320,
+      friction: 10,
+    },
+    from: {
+      opacity: 0,
+      transform: "translateY(110px)",
+      // transform: 'skew(-90deg)',
+    },
+    to: {
+      opacity: 1,
+      transform: "translateY(0px)",
+      // transform: 'skew(0deg)'
+    },
+  });
+
+  const RoleAnimation = useSpring({
+    config: {
+      duration: 700,
+      tension: 320,
+      friction: 10,
+      delay: 2100
+    },
+    from: {
+      opacity: 0,
+      transform: "translateY(-110px)",
+    },
+    to: {
+      opacity: 1,
+      transform: "translateY(0px)",
+    },
+  });
+
+  const animation = useSpring({
+    config: {
+      duration: 700,
+      tension: 320,
+      friction: 30,
+    },
+    from: {
+      opacity: 0,
+      transform: "translateY(65px)",
+    },
+    to: {
+      opacity: 1,
+      transform: "tranlateY(0px)",
+    },
+  });
 
   return (
     <>
       <div className={Styles.hero_section}>
         <div className={Styles.upper_headline}>
-          <span>{"{" + "Portfolio" + "}"}</span>
+          <span>
+            <section className={Styles.protfolio_wrapper}>
+              <animated.p style={animation}>
+                {" "}
+                {"{" + "Portfolio" + "}"}
+              </animated.p>
+            </section>
+          </span>
+
           <h1 className={Styles.name_heading}>
-            Aniket Patel
+            <section className={Styles.name_wrapper}>
+              <animated.p style={nameAnimation}>Aniket Patel</animated.p>
+            </section>
           </h1>
         </div>
         <div className={Styles.bottom_headline}>
-          <h2 className={Styles.work_heading}>Web Developer & Designer</h2>
+          <h2 className={Styles.work_heading}>
+            {" "}
+            <section className={Styles.work_wrapper}>
+              <animated.p style={RoleAnimation}>
+                Web Developer & Designer
+              </animated.p>
+            </section>
+          </h2>
           <span className={Styles.location}>({text})</span>
         </div>
 

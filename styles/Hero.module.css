@@ -3,7 +3,7 @@
     background-color: #000;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center ;
     position: relative;
     height: 100vh;
     display: flex;
@@ -35,6 +35,15 @@
     padding: 1rem;
     color: rgba(0, 0, 0, 0.807);
 } */
+.name_wrapper{
+  overflow: hidden;
+}
+.work_wrapper{
+  overflow: hidden;
+}
+.protfolio_wrapper{
+  overflow: hidden;
+}
 .name_heading:hover{
     animation: glitch 1s linear infinite;
   }
@@ -102,6 +111,7 @@
 
 .upper_headline{
     font-size: 1.2rem;
+    margin-top: 1rem;
 }
 .upper_headline span{
     transition: color 1s ease-in-out, box-shadow .5s ease-in-out;

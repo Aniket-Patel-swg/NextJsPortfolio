@@ -15,7 +15,10 @@
 } 
 .client_text_header em {
   /* color: rgb(188, 22, 164); */
-  color: #415D8F;
+  color: #6B8A97;
+}
+.left_text_wrapper{
+  overflow: hidden;
 }
 .client_text_header {
   padding: 3rem;
@@ -49,7 +52,7 @@
   color: #636363;
 }
 .social_link a:hover{
-  color: #415D8F;
+  color: #6B8A97;
 }
 /* Button Styling */
 .contact_button {
@@ -72,7 +75,7 @@
 }
 .contact_button a{
   text-decoration: none;
-  color: #415D8F;
+  color: #6B8A97;
 }
 
 .contact_button span:first-child {
@@ -129,6 +132,7 @@
   display: flex;
   justify-content: space-around;  
   padding: 3rem;
+  background-color: #131313;
 }
 .Service_cards section{
   padding: 2rem;
@@ -137,7 +141,7 @@
   font-weight: 800;
    transition: color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
    color: #5F5F5F;
-   border: 2px solid #31538E;
+   border: 2px solid #6B8A97;
    margin-bottom: 3rem;
    border-radius: 0.5rem;
    cursor: pointer;

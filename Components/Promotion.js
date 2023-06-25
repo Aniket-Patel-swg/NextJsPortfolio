@@ -16,9 +16,9 @@ const Promotion = () => {
   const animation = useSpring({
     opacity: scrollY.to((y) => (y > 450 ? 1 : 0)),
     transform: scrollY.to((y) =>
-      y > 450 ? "translateY(0px)" : "translateY(100px)"
+      y > 450 ? "translateY(0px)" : "translateY(200px)"
     ),
-    config: { mass: 1, tension: 120, friction: 14 },
+    config: { mass: 1, tension: 120, friction: 14, duration: 500 },
   });
 
   const animation2 = useSpring({
@@ -40,14 +40,16 @@ const Promotion = () => {
   return (
     <>
       <div className={Styles.about_header}>
-        <animated.h1 style={animation} className={Styles.client_text_header}>
-          <p>
+       
+        <h1 className={Styles.client_text_header}>
+        <section className={Styles.left_text_wrapper}>
+          <animated.p style={animation}>
             I'll Make your <br /> <em> dream website </em>
             <br />
             <b> live! </b>
-          </p>
-        </animated.h1>
-
+          </animated.p>
+</section>
+        </h1>
         <div style={animation} className={Styles.contact_section}>
           <animated.p style={animation2}>let's build your website</animated.p>
 
